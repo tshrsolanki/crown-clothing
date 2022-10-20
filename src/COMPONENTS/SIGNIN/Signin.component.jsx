@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Forminput } from "./Forminput";
+import { Forminput } from "../FORM_INPUT/Forminput.component";
 import {
-  createUserDocumentFromAuth,
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
 } from "../../UTILS/firebase.utils";
 import "./Signin.style.scss";
-import { Button } from "../BUTTON/Button";
+import { Button, BUTTON_CLASSES } from "../BUTTON/Button.component";
 
 const defaultFormFields = {
   email: "",
@@ -70,10 +69,12 @@ export const Signin = () => {
           autoComplete="off"
         />
         <div className="buttons-container">
-          <Button type="submit">SIGNIN</Button>
+          <Button buttonType={BUTTON_CLASSES.base} type="submit">
+            SIGNIN
+          </Button>
           <Button
             type="button"
-            buttonType={"google"}
+            buttonType={BUTTON_CLASSES.google}
             onClick={signInWithGoogle}
           >
             GOOGLE SIGN IN

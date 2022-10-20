@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Forminput } from "./Forminput";
+import { Forminput } from "../FORM_INPUT/Forminput.component";
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../UTILS/firebase.utils";
 import "./Signup.style.scss";
-import { Button } from "../BUTTON/Button";
+import { Button, BUTTON_CLASSES } from "../BUTTON/Button.component";
 
 const defaultFormFields = {
   displayName: "",
@@ -86,7 +86,9 @@ export const Signup = () => {
           value={confirmPassword}
           autoComplete="off"
         />
-        <Button type="submit">SIGNUP</Button>
+        <Button buttonType={BUTTON_CLASSES.google} type="submit">
+          SIGNUP
+        </Button>
       </form>
     </div>
   );

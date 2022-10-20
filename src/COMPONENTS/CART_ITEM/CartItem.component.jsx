@@ -1,4 +1,3 @@
-import react from "react";
 import "./CartItem.style.scss";
 
 export const CartItem = ({ cartItem }) => {

@@ -5,8 +5,8 @@ import React, { useEffect } from "react";
 //   signInWithGoogleRedirect,
 // } from "../../UTILS/firebase.utils";
 // import { getRedirectResult } from "firebase/auth";
-import { Signup } from "./Signup";
-import { Signin } from "./Signin";
+import { Signup } from "../../COMPONENTS/SIGNUP/Signup.component";
+import { Signin } from "../../COMPONENTS/SIGNIN/Signin.component";
 import "./Authentication.style.scss";
 
 export const Authentication = () => {

@@ -1,11 +1,8 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
-import "./categories.style.scss";
-
-import { CategoryItem } from "./COMPONENTS/CATEGORY_ITEM/CategoryItem.comp";
-
-export const Categories = () => {
-  const category = [
+import { DirectoryItem } from "../DIRECTORY_ITEM/DirectoryItem.component";
+import "./Directory.style.scss";
+export const Directory = () => {
+  const categories = [
     {
       id: 1,
       title: "hats",
@@ -32,11 +29,11 @@ export const Categories = () => {
       imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
     },
   ];
-
   return (
-    <div>
-      <CategoryItem category={category} />
-      <Outlet />
+    <div className="directory-container">
+      {categories.map((category, i) => {
+        return <DirectoryItem category={category} />;
+      })}
     </div>
   );
 };
