@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { CartContext } from "../../CONTEXT/Cart.context";
 import "./CheckoutItem.style.scss";
+import { useDispatch } from "react-redux";
+import { decItem, delItem, incItem } from "../../ACTIONS/cart.action";
 
 export const CheckoutItem = (props) => {
-  const { removeItem, addingQuantity, decQuantity } = useContext(CartContext);
-
+  const dispatch = useDispatch();
   return (
     <div className="checkout-item-container">
       <div className="image-container">
@@ -12,11 +12,11 @@ export const CheckoutItem = (props) => {
       </div>
       <span className="name">{props.item.name}</span>
       <span className="quantity">
-        <div className="arrow" onClick={() => decQuantity(props.item)}>
+        <div className="arrow" onClick={() => dispatch(decItem(props.item))}>
           &#10094;
         </div>
         <span className="value">{props.item.quantity}</span>
-        <div className="arrow" onClick={() => addingQuantity(props.item)}>
+        <div className="arrow" onClick={() => dispatch(incItem(props.item))}>
           &#10095;
         </div>
       </span>
@@ -24,7 +24,7 @@ export const CheckoutItem = (props) => {
       <div
         className="remove-button"
         onClick={() => {
-          removeItem(props.item);
+          dispatch(delItem(props.item));
         }}
       >
         &#10005;

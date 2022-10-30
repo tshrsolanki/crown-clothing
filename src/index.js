@@ -7,18 +7,24 @@ import reportWebVitals from "./reportWebVitals";
 import { UserProvider } from "./CONTEXT/User.context";
 import { CartProvider } from "./CONTEXT/Cart.context";
 import { CategoriesProvider } from "./CONTEXT/Categories.context";
+import { createStore } from "redux";
+import { rootReducer } from "./REDUCERS/rootreducer";
+import { Provider } from "react-redux";
 
+const store = createStore(rootReducer);
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <UserProvider>
-        <CategoriesProvider>
-          <CartProvider>
-            <App />
-          </CartProvider>
-        </CategoriesProvider>
-      </UserProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <UserProvider>
+          <CategoriesProvider>
+            <CartProvider>
+              <App />
+            </CartProvider>
+          </CategoriesProvider>
+        </UserProvider>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
