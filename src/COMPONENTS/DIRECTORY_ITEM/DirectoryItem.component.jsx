@@ -7,7 +7,6 @@ export const DirectoryItem = ({ category }) => {
   const routeHandler = () => {
     navigate(category.route);
   };
-  console.log(category);
   return (
     <div className="directory-item-container">
       <div

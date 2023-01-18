@@ -7,10 +7,6 @@ export const Checkout = () => {
   const { cartDetails } = useSelector((state) => {
     return state;
   });
-  console.log(
-    `file: Checkout.component.jsx ~ line 11 ~ cartDetail`,
-    cartDetails
-  );
 
   return (
     <div className="checkout-container">
