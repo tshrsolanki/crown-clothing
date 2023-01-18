@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Fragment, useContext } from "react";
 import { signOutUser } from "../../UTILS/firebase.utils";
 import { ReactComponent as Crown } from "../../ASSESTS/crown.svg";
@@ -13,6 +13,7 @@ import {
   NavLinks,
   NavLink,
 } from "./Navigation.style";
+import { toast } from "react-toastify";
 export const Navigation = () => {
   const { currentUser } = useContext(UserContext);
   const { isCartOpen } = useContext(CartContext);

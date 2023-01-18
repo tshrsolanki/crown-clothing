@@ -4,6 +4,7 @@ import { Navigation } from "./ROUTES/NAVIGATION/Navigation.component";
 import { Authentication } from "./ROUTES/AUTHENTICATION/Authentication.component";
 import { Shop } from "./ROUTES/SHOP/Shop.component";
 import { Home } from "./ROUTES/HOMEPAGE/Home.component";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
